@@ -1,15 +1,13 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const generateTeam = require("./src/teamTemplate.html")
-
-
 const Employee = require('./lib/Employee.js');
 const Engineer = require('./lib/Engineer.js');
 const Intern = require('./lib/Intern.js');
 const Manager = require('./lib/Manager.js');
 // new Employee().assignName();
 //console.log(inquirer);
-const questions = async () => {
+const promptUser = async () => {
     const answers = await
 inquirer
     .prompt([
