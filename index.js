@@ -44,13 +44,37 @@ inquirer
         
     ])
 
+    //THEN I am prompted to enter the engineer’s name, ID, email, and GitHub username, and I am taken back to the menu
+
+
     if (answers.options === "Add an Engineer") {
         const engineerOpt = await inquirer.prompt([
             {
                 type: 'text',
                 name: 'engName',
                 message: "What is the Engineer's name?"
-            }
+            },
+
+            {
+                type: 'text',
+                name: 'engId',
+                message: "What is the Engineer's employee ID?"
+        
+            },
+
+            {
+                type: 'text',
+                name: 'email',
+                message: "What is the Engineer's email address?"
+    
+            },
+
+            {
+                type: 'text',
+                name: 'github',
+                message: "What is the Engineer's Github username?"
+    
+            },
         ])
     }}
 
