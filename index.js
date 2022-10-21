@@ -5,6 +5,12 @@ const Employee = require('./lib/Employee.js');
 const Engineer = require('./lib/Engineer.js');
 const Intern = require('./lib/Intern.js');
 const Manager = require('./lib/Manager.js');
+const path = require('path');
+
+//path to the output html
+const OUTPUT_DIR = path.resolve(__dirname, "dist");
+const outputPage = path.join(OUTPUT_DIR, "teamTemplate.html");
+
 // new Employee().assignName();
 //console.log(inquirer);
 const promptUser = async () => {
@@ -43,6 +49,8 @@ const promptUser = async () => {
                 },
 
             ])
+
+            
 
     if (answers.options === "Add an Engineer") {
         const engineerOpt = await inquirer.prompt([
@@ -106,6 +114,36 @@ const promptUser = async () => {
         ])
     }
 
+    if (answers.options === "Finish building my team") {
+        const internOpt = await inquirer.prompt([
+            {
+                type: 'text',
+                name: 'intName',
+                message: "What is the Intern's name?"
+            },
+
+            {
+                type: 'text',
+                name: 'intId',
+                message: "What is the Intern's employee ID?"
+
+            },
+
+            {
+                type: 'text',
+                name: 'email',
+                message: "What is the Intern's email address?"
+
+            },
+
+            {
+                type: 'text',
+                name: 'school',
+                message: "What school did the intern attend?"
+
+            },
+        ])
+    }
 }
 
 // function to initialize app
@@ -114,12 +152,12 @@ function init() {
         .then(teamData => {
 
             console.log(teamData);
-            const outputPage = teamTemplate(teamData);
+            //const outputPage = teamTemplate(teamData);
 
-            fs.writeFile('./dist/outputHTML.html', outputPage, err => {
+            fs.writeFile('./dist/teamTemplate.html', outputPage, err => {
                 if (err) throw new Error(err);
 
-                console.log('Team Profile Created! Check out outputHTML.html in this directory to see it!');
+                console.log('Team Profile Created! Check out teamTemplate.html in this directory to see it!');
             });
         });
 }
