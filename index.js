@@ -9,43 +9,40 @@ const Manager = require('./lib/Manager.js');
 //console.log(inquirer);
 const promptUser = async () => {
     const answers = await
-inquirer
-    .prompt([
-        {
-            type: 'text',
-            name: 'mgrName',
-            message: "What is the name of the Team Manager?"
+        inquirer
+            .prompt([
+                {
+                    type: 'text',
+                    name: 'mgrName',
+                    message: "What is the name of the Team Manager?"
 
-        },
-        {
-            type: 'text',
-            name: 'employeeId',
-            message: "What is the Team Manager's employee ID?"
-    
-        },
-        {
-            type: 'text',
-            name: 'email',
-            message: "What is the Team Manager's email address?"
+                },
+                {
+                    type: 'text',
+                    name: 'employeeId',
+                    message: "What is the Team Manager's employee ID?"
 
-        },
-        {
-            type: 'text',
-            name: 'officeNumber',
-            message: "What is the Team Manager's office number?"
-    
-        },
-        {
-            type: 'list',
-            name: 'options',
-            message: 'What would you like to do next?',
-            choices: ['Add an Engineer', 'Add an Intern', 'Finish building my team'],
-        },
-        
-    ])
+                },
+                {
+                    type: 'text',
+                    name: 'email',
+                    message: "What is the Team Manager's email address?"
 
-    //THEN I am prompted to enter the engineer’s name, ID, email, and GitHub username, and I am taken back to the menu
+                },
+                {
+                    type: 'text',
+                    name: 'officeNumber',
+                    message: "What is the Team Manager's office number?"
 
+                },
+                {
+                    type: 'list',
+                    name: 'options',
+                    message: 'What would you like to do next?',
+                    choices: ['Add an Engineer', 'Add an Intern', 'Finish building my team'],
+                },
+
+            ])
 
     if (answers.options === "Add an Engineer") {
         const engineerOpt = await inquirer.prompt([
@@ -59,30 +56,63 @@ inquirer
                 type: 'text',
                 name: 'engId',
                 message: "What is the Engineer's employee ID?"
-        
+
             },
 
             {
                 type: 'text',
                 name: 'email',
                 message: "What is the Engineer's email address?"
-    
+
             },
 
             {
                 type: 'text',
                 name: 'github',
                 message: "What is the Engineer's Github username?"
-    
+
             },
         ])
-    }}
+    }
 
-    // function to initialize app
+    if (answers.options === "Add an Intern") {
+        const internOpt = await inquirer.prompt([
+            {
+                type: 'text',
+                name: 'intName',
+                message: "What is the Intern's name?"
+            },
+
+            {
+                type: 'text',
+                name: 'intId',
+                message: "What is the Intern's employee ID?"
+
+            },
+
+            {
+                type: 'text',
+                name: 'email',
+                message: "What is the Intern's email address?"
+
+            },
+
+            {
+                type: 'text',
+                name: 'school',
+                message: "What school did the intern attend?"
+
+            },
+        ])
+    }
+
+}
+
+// function to initialize app
 function init() {
     promptUser()
         .then(teamData => {
-            
+
             console.log(teamData);
             const outputPage = teamTemplate(teamData);
 
