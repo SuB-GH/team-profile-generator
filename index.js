@@ -6,6 +6,7 @@ const Engineer = require('./lib/Engineer.js');
 const Intern = require('./lib/Intern.js');
 const Manager = require('./lib/Manager.js');
 const path = require('path');
+const employees = [];
 
 //path to the output html
 const OUTPUT_DIR = path.resolve(__dirname, "dist");
@@ -47,9 +48,8 @@ const promptUser = async () => {
                     message: 'What would you like to do next?',
                     choices: ['Add an Engineer', 'Add an Intern', 'Finish building my team'],
                 },
-
+                
             ])
-
             
 
     if (answers.options === "Add an Engineer") {
@@ -81,7 +81,9 @@ const promptUser = async () => {
 
             },
         ])
+        
     }
+    createTeam();
 
     if (answers.options === "Add an Intern") {
         const internOpt = await inquirer.prompt([
@@ -153,13 +155,18 @@ function init() {
 
             console.log(teamData);
             //const outputPage = teamTemplate(teamData);
+function createTeam(){
+    if (!fs.existsSync( OUTPUT_DIR)) {
+        fs.mkdirSync(OUTPUT_DIR)
+            }
+            // renderHTML = () => {
+                // const createHTML = render(employees);
+                fs.writeFileSync(outputPage, generateTeam(employees), err => {
+                    if (err) throw new Error(err);
 
-            fs.writeFile('./dist/teamTemplate.html', outputPage, err => {
-                if (err) throw new Error(err);
-
-                console.log('Team Profile Created! Check out teamTemplate.html in this directory to see it!');
-            });
-        });
-}
+                    console.log('Team Profile Created! Check out teamTemplate.html in this directory to see it!');
+                });
+            };
+        })}
 // Function call to initialize app
 init();
