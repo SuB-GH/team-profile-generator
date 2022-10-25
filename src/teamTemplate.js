@@ -1,7 +1,7 @@
 //create the team template cards
 
-const renderTeam = team => {
-    let html = ""
+const renderTeam = (team) => {
+    //let html = ""
     // add for each, array.map, etc to loop over team array 
     // call render manager then html.push, then renderManager
     //this will create the Manager employee card
@@ -34,7 +34,7 @@ const renderTeam = team => {
                 <ul class="employee-list">
                     <li class="employee-list-item">ID: ${engineer.getId()}</li>
                     <li class="employee-list-item">Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}<a/></li>
-                    <li class="employee-list-item">Office Number: ${engineer.getOfficeNum()}</li>
+                    <li class="employee-list-item">Office Number: ${engineer.getGithub()}</li>
                 </ul>
 
             </div>
@@ -52,14 +52,40 @@ const renderTeam = team => {
                 <ul class="employee-list">
                     <li class="employee-list-item">ID: ${intern.getId()}</li>
                     <li class="employee-list-item">Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}<a/></li>
-                    <li class="employee-list-item">Office Number: ${intern.getOfficeNum()}</li>
+                    <li class="employee-list-item">Office Number: ${intern.getSchool()}</li>
                 </ul>
 
             </div>
         </div>
     `}
+
+   
+
+    const html = [];
+html.push(
+    team
+        .filter((employee) => employee.getRole() === "Manager")
+        .map((manager) => renderManager(manager))
+);
+html.push(
+    team
+        .filter((employee) => employee.getRole() === "Engineer")
+        .map((engineer) => renderEngineer(engineer))
+        .join("")
+);
+html.push(
+    team
+        .filter((employee) => employee.getRole() === "Intern")
+        .map((intern) => renderIntern(intern))
+        .join("")
+        );
+        return html.join("");
+
 };
-module.exports = team => {
+
+
+
+module.exports = (team) => {
     return `
     <!DOCTYPE html>
 <html lang="en">
