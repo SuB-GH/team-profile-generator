@@ -7,6 +7,7 @@ const renderTeam = (team) => {
     //this will create the Manager employee card
     const renderManager = manager => {
         return `
+        <div class= "team-cards">
         <div class= "employee-card">
             <div class="card-header">
                 <h2 class="card-header">${manager.getName()}</h2>
@@ -21,10 +22,12 @@ const renderTeam = (team) => {
 
             </div>
         </div>
+        </div>
     `}
 
     const renderEngineer = engineer => {
         return `
+        <div class= "team-cards">
         <div class= "employee-card">
             <div class="card-header">
                 <h2 class="card-header">${engineer.getName()}</h2>
@@ -39,10 +42,12 @@ const renderTeam = (team) => {
 
             </div>
         </div>
+        </div>
     `}
 
     const renderIntern = intern => {
         return `
+        <div class= "team-cards">
         <div class= "employee-card">
             <div class="card-header">
                 <h2 class="card-header">${intern.getName()}</h2>
@@ -56,6 +61,7 @@ const renderTeam = (team) => {
                 </ul>
 
             </div>
+        </div>
         </div>
     `}
 
