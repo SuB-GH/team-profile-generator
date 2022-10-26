@@ -7,7 +7,7 @@ const renderTeam = (team) => {
     //this will create the Manager employee card
     const renderManager = manager => {
         return `
-        <div class= "team-cards col-12 d-flex justify-content-center">
+        <div class="employee-cards d-flex">
         <div class= "employee-card "d-flex p-2 bd-highlight"">
             <div class="card-header">
                 <h2 class="card-header">${manager.getName()}</h2>
@@ -21,14 +21,14 @@ const renderTeam = (team) => {
                 </ul>
 
             </div>
-        </div>
+            </div>
         </div>
     `}
 
     const renderEngineer = engineer => {
         return `
-        <div class= "team-cards">
-        <div class= "employee-card">
+        <div class="employee-cards d-flex">
+        <div class= "employee-card "d-flex p-2 bd-highlight"">
             <div class="card-header">
                 <h2 class="card-header">${engineer.getName()}</h2>
                 <h3 class="card-header">${engineer.getRole()}</h3>
@@ -37,18 +37,19 @@ const renderTeam = (team) => {
                 <ul class="employee-list">
                     <li class="employee-list-item">ID: ${engineer.getId()}</li>
                     <li class="employee-list-item">Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}<a/></li>
-                    <li class="employee-list-item">Github Username: ${engineer.getGithub()}</li>
+                    <li class="employee-list-item">Github Username: <a href="https://github.com/${engineer.getGithub()}" target="_blank" rel="noopener noreferrer">${engineer.getGithub}</li>
                 </ul>
 
             </div>
+        
         </div>
-        </div>
+         </div>
     `}
 
     const renderIntern = intern => {
         return `
-        <div class= "team-cards">
-        <div class= "employee-card">
+        <div class="employee-cards d-flex">
+        <div class= "employee-card "d-flex p-2 bd-highlight"">
             <div class="card-header">
                 <h2 class="card-header">${intern.getName()}</h2>
                 <h3 class="card-header">${intern.getRole()}</h3>
@@ -61,31 +62,30 @@ const renderTeam = (team) => {
                 </ul>
 
             </div>
-        </div>
-
+            </div>
     `}
 
-   
+
 
     const html = [];
-html.push(
-    team
-        .filter((employee) => employee.getRole() === "Manager")
-        .map((manager) => renderManager(manager))
-);
-html.push(
-    team
-        .filter((employee) => employee.getRole() === "Engineer")
-        .map((engineer) => renderEngineer(engineer))
-        .join("")
-);
-html.push(
-    team
-        .filter((employee) => employee.getRole() === "Intern")
-        .map((intern) => renderIntern(intern))
-        .join("")
-        );
-        return html.join("");
+    html.push(
+        team
+            .filter((employee) => employee.getRole() === "Manager")
+            .map((manager) => renderManager(manager))
+    );
+    html.push(
+        team
+            .filter((employee) => employee.getRole() === "Engineer")
+            .map((engineer) => renderEngineer(engineer))
+            .join("")
+    );
+    html.push(
+        team
+            .filter((employee) => employee.getRole() === "Intern")
+            .map((intern) => renderIntern(intern))
+            .join("")
+    );
+    return html.join("");
 
 };
 
@@ -101,7 +101,7 @@ module.exports = (team) => {
 <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 <title>Team Profile</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="./dist/style.css">  
 </head>
 <body>
 
@@ -113,10 +113,12 @@ module.exports = (team) => {
         </div>
     </div>
     
-            <div class="employee-cards d-inline-flex">
+    <div class="employee-cards d-flex">
+    <div class= "employee-card "d-flex p-2 bd-highlight"">
 
                 ${renderTeam(team)}
 
+            </div>
             </div>
     
 
