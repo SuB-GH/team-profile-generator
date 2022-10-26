@@ -7,8 +7,8 @@ const renderTeam = (team) => {
     //this will create the Manager employee card
     const renderManager = manager => {
         return `
-        <div class="employee-cards d-flex">
-        <div class= "employee-card "d-flex p-2 bd-highlight"">
+       
+        <div class="employee-card card p-2 bd-highlight">
             <div class="card-header">
                 <h2 class="card-header">${manager.getName()}</h2>
                 <h3 class="card-header">${manager.getRole()}</h3>
@@ -27,8 +27,8 @@ const renderTeam = (team) => {
 
     const renderEngineer = engineer => {
         return `
-        <div class="employee-cards d-flex">
-        <div class= "employee-card "d-flex p-2 bd-highlight"">
+      
+        <div class="employee-card card p-2 bd-highlight">
             <div class="card-header">
                 <h2 class="card-header">${engineer.getName()}</h2>
                 <h3 class="card-header">${engineer.getRole()}</h3>
@@ -48,8 +48,8 @@ const renderTeam = (team) => {
 
     const renderIntern = intern => {
         return `
-        <div class="employee-cards d-flex">
-        <div class= "employee-card "d-flex p-2 bd-highlight"">
+     
+        <div class="employee-card card p-2 bd-highlight">
             <div class="card-header">
                 <h2 class="card-header">${intern.getName()}</h2>
                 <h3 class="card-header">${intern.getRole()}</h3>
@@ -114,7 +114,7 @@ module.exports = (team) => {
     </div>
     
     <div class="employee-cards d-flex">
-    <div class= "employee-card "d-flex p-2 bd-highlight"">
+    <div class= "employee-card d-flex flex-wrap text-center p-2 bd-highlight">
 
                 ${renderTeam(team)}
 
