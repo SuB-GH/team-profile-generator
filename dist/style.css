@@ -1,8 +1,22 @@
+* {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
 .jumbotron {
     background-color: rgb(137, 133, 199);
 }
 
 .employee-card {
     max-width: 33%;
-    width: 30%
+    width: 30%;
+    
+}
+
+.employee-list {
+    list-style-type: none;
+
+}
+
+.card-header {
+    background-color: beige;
 }

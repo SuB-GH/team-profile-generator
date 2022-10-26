@@ -8,7 +8,7 @@ const renderTeam = (team) => {
     const renderManager = manager => {
         return `
        
-        <div class="employee-card card p-2 bd-highlight">
+        <div style="width:18rem;" class="employee-card card p-2 bd-highlight">
             <div class="card-header">
                 <h2 class="card-header">${manager.getName()}</h2>
                 <h3 class="card-header">${manager.getRole()}</h3>
@@ -21,14 +21,14 @@ const renderTeam = (team) => {
                 </ul>
 
             </div>
-            </div>
+            
         </div>
     `}
 
     const renderEngineer = engineer => {
         return `
       
-        <div class="employee-card card p-2 bd-highlight">
+        <div style="width:18rem;" class="employee-card card p-2 bd-highlight">
             <div class="card-header">
                 <h2 class="card-header">${engineer.getName()}</h2>
                 <h3 class="card-header">${engineer.getRole()}</h3>
@@ -37,7 +37,7 @@ const renderTeam = (team) => {
                 <ul class="employee-list">
                     <li class="employee-list-item">ID: ${engineer.getId()}</li>
                     <li class="employee-list-item">Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}<a/></li>
-                    <li class="employee-list-item">Github Username: <a href="https://github.com/${engineer.getGithub()}" target="_blank" rel="noopener noreferrer">${engineer.getGithub}</li>
+                    <li class="employee-list-item">Github Username: <a href="https://github.com/${engineer.getGithub()}" target="_blank" rel="noopener noreferrer">${engineer.getGithub()}<a/></li>
                 </ul>
 
             </div>
@@ -49,7 +49,7 @@ const renderTeam = (team) => {
     const renderIntern = intern => {
         return `
      
-        <div class="employee-card card p-2 bd-highlight">
+        <div style="width:18rem;" class="employee-card card p-2 bd-highlight">
             <div class="card-header">
                 <h2 class="card-header">${intern.getName()}</h2>
                 <h3 class="card-header">${intern.getRole()}</h3>
@@ -101,7 +101,7 @@ module.exports = (team) => {
 <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 <title>Team Profile</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<link rel="stylesheet" href="./dist/style.css">  
+<link rel="stylesheet" href="./dist/style.css"> 
 </head>
 <body>
 
@@ -113,13 +113,13 @@ module.exports = (team) => {
         </div>
     </div>
     
-    <div class="employee-cards d-flex">
-    <div class= "employee-card d-flex flex-wrap text-center p-2 bd-highlight">
+    
+    <div class= "container d-flex flex-wrap text-center p-2 bd-highlight">
 
                 ${renderTeam(team)}
 
             </div>
-            </div>
+           
     
 
 </body>
