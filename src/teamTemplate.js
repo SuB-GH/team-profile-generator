@@ -1,10 +1,7 @@
 //create the team template cards
 
 const renderTeam = (team) => {
-    //let html = ""
-    // add for each, array.map, etc to loop over team array 
-    // call render manager then html.push, then renderManager
-    //this will create the Manager employee card
+
     const renderManager = manager => {
         return `
        
@@ -19,9 +16,7 @@ const renderTeam = (team) => {
                     <li class="employee-list-item">Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}<a/></li>
                     <li class="employee-list-item">Office Number: ${manager.getOfficeNum()}</li>
                 </ul>
-
-            </div>
-            
+            </div>           
         </div>
     `}
 
@@ -39,11 +34,8 @@ const renderTeam = (team) => {
                     <li class="employee-list-item">Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}<a/></li>
                     <li class="employee-list-item">Github: <a href="https://github.com/${engineer.getGithub()}" target="_blank" rel="noopener noreferrer">${engineer.getGithub()}<a/></li>
                 </ul>
-
-            </div>
-        
-        </div>
-       
+            </div>        
+        </div>       
     `}
 
     const renderIntern = intern => {
@@ -60,12 +52,9 @@ const renderTeam = (team) => {
                     <li class="employee-list-item">Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}<a/></li>
                     <li class="employee-list-item">School: ${intern.getSchool()}</li>
                 </ul>
-
             </div>
             </div>
     `}
-
-
 
     const html = [];
     html.push(
@@ -88,8 +77,6 @@ const renderTeam = (team) => {
     return html.join("");
 
 };
-
-
 
 module.exports = (team) => {
     return `
@@ -118,13 +105,7 @@ module.exports = (team) => {
 
                 ${renderTeam(team)}
 
-            </div>
-           
-    
-
+            </div>         
 </body>
-
     `
 }
-
-//<body>${renderTeam(team)}</body>

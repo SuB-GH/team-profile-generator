@@ -14,7 +14,6 @@ const teamGen = require('./src/teamTemplate');
 const OUTPUT_DIR = path.resolve(__dirname, "dist");
 const outputPage = path.join(OUTPUT_DIR, "teamTemplate.html");
 
-
 managerPrompt();
 function managerPrompt() {
     inquirer
@@ -129,9 +128,7 @@ function createNewTeam() {
                 createTeam();
                 console.log('Team Profile Created! Check out index.html in this directory to see it!');
                 return;
-                
             }
-
         }
         )
 }
@@ -139,11 +136,9 @@ function createTeam() {
     if (!fs.existsSync(OUTPUT_DIR)) {
         fs.mkdirSync(OUTPUT_DIR)
     }
-    // renderHTML = () => {
-    // const createHTML = render(employees);""
+
     fs.writeFileSync("index.html", teamGen(employees), err => {
         if (err) throw new Error(err);
 
-        
     });
 }

@@ -1,20 +1,18 @@
 * {
-    font-family:serif
+    font-family: serif
 }
 
 .jumbotron {
     background-color: rgb(237, 108, 108);
     height: 100px;
-   
 }
 
 .employee-card {
     max-width: 22%;
     width: 20%;
     padding: 15px;
-    margin: 15px;  
-    justify-content: center; 
-    
+    margin: 15px;
+    justify-content: center;
 }
 
 .employee-list {
@@ -22,8 +20,6 @@
     text-align: left;
     margin: none;
     padding: none;
-
-
 }
 
 .card-header {
@@ -31,6 +27,6 @@
 }
 
 .card-body {
-margin: none;
+    margin: none;
     padding: none;
 }
