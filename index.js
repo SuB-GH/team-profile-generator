@@ -127,7 +127,9 @@ function createNewTeam() {
             }
             if (answers.options === "Finish building my team") {
                 createTeam();
+                console.log('Team Profile Created! Check out index.html in this directory to see it!');
                 return;
+                
             }
 
         }
@@ -142,6 +144,6 @@ function createTeam() {
     fs.writeFileSync("index.html", teamGen(employees), err => {
         if (err) throw new Error(err);
 
-        console.log('Team Profile Created! Check out teamTemplate.html in this directory to see it!');
+        
     });
 }

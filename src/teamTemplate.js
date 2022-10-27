@@ -8,13 +8,13 @@ const renderTeam = (team) => {
     const renderManager = manager => {
         return `
        
-        <div style="width:18rem;" class="employee-card card p-2 bd-highlight">
+        <div style="width:16rem;" class="employee-card card shadow p-3 mb-5 bg-white rounded">
             <div class="card-header">
-                <h2 class="card-header">${manager.getName()}</h2>
-                <h3 class="card-header">${manager.getRole()}</h3>
+                <h3 class="card-header">${manager.getName()}</h3>
+                <h4 class="card-header">${manager.getRole()}</h4>
             </div>
             <div class="card-body">
-                <ul class="employee-list">
+                <ul class="employee-list p-2">
                     <li class="employee-list-item">ID: ${manager.getId()}</li>
                     <li class="employee-list-item">Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}<a/></li>
                     <li class="employee-list-item">Office Number: ${manager.getOfficeNum()}</li>
@@ -28,34 +28,34 @@ const renderTeam = (team) => {
     const renderEngineer = engineer => {
         return `
       
-        <div style="width:18rem;" class="employee-card card p-2 bd-highlight">
+        <div style="width:16rem;" class="employee-card card shadow p-3 mb-5 bg-white rounded">
             <div class="card-header">
-                <h2 class="card-header">${engineer.getName()}</h2>
-                <h3 class="card-header">${engineer.getRole()}</h3>
+                <h3 class="card-header">${engineer.getName()}</h3>
+                <h4 class="card-header">${engineer.getRole()}</h4>
             </div>
             <div class="card-body">
-                <ul class="employee-list">
+            <ul class="employee-list p-2">
                     <li class="employee-list-item">ID: ${engineer.getId()}</li>
                     <li class="employee-list-item">Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}<a/></li>
-                    <li class="employee-list-item">Github Username: <a href="https://github.com/${engineer.getGithub()}" target="_blank" rel="noopener noreferrer">${engineer.getGithub()}<a/></li>
+                    <li class="employee-list-item">Github: <a href="https://github.com/${engineer.getGithub()}" target="_blank" rel="noopener noreferrer">${engineer.getGithub()}<a/></li>
                 </ul>
 
             </div>
         
         </div>
-         </div>
+       
     `}
 
     const renderIntern = intern => {
         return `
      
-        <div style="width:18rem;" class="employee-card card p-2 bd-highlight">
+        <div style="width:16rem;" class="employee-card card shadow p-3 mb-5 bg-white rounded">
             <div class="card-header">
-                <h2 class="card-header">${intern.getName()}</h2>
-                <h3 class="card-header">${intern.getRole()}</h3>
+                <h3 class="card-header">${intern.getName()}</h3>
+                <h4 class="card-header">${intern.getRole()}</h4>
             </div>
             <div class="card-body">
-                <ul class="employee-list">
+            <ul class="employee-list p-2">
                     <li class="employee-list-item">ID: ${intern.getId()}</li>
                     <li class="employee-list-item">Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}<a/></li>
                     <li class="employee-list-item">School: ${intern.getSchool()}</li>
@@ -114,7 +114,7 @@ module.exports = (team) => {
     </div>
     
     
-    <div class= "container d-flex flex-wrap text-center p-2 bd-highlight">
+    <div class= "container justify-content-center d-flex flex-wrap text-center p-2 bd-highlight">
 
                 ${renderTeam(team)}
 
