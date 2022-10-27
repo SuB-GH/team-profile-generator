@@ -9,12 +9,14 @@ Node.js
 Inquirer  
 Jest (for testing)
 
-
 ## Usage
-Upon successful installation of the Inquirer, enter "node index.js" from the command line to initiate the prompts. 
+Upon successful installation of the Inquirer package, enter "node index.js" from the command line to initiate the prompts. 
+
+Screenshot
+![alt text](assets/team-screenshot.png)
 
 ## Link to walkthrough video:
-
+https://drive.google.com/file/d/1faYZFOYvhUMO4opTi8oAwkAwrep2-qjx/view
 
 
 ### &copy; Created by:  
