@@ -12,7 +12,6 @@ Jest (for testing)
 ## Usage
 Upon successful installation of the Inquirer package, enter "node index.js" from the command line to initiate the prompts. 
 
-Screenshot
 ![alt text](assets/team-screenshot.png)
 
 ## Link to walkthrough video:
